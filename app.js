@@ -13,6 +13,7 @@ app.use(
 
 app.options("*", cors());
 console.log("CORS middleware loaded");
+app.use(express.json());
 
 const port = 7700;
 
@@ -29,7 +30,7 @@ const answerRoutes = require("./routes/answerRoute");
 //authentication routes middleware file
 
 // json middleware to extract json data
-app.use(express.json());
+
 
 // user routes middleware
 app.use("/api/users", userRoutes);
