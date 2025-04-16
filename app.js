@@ -1,5 +1,3 @@
-
-
 const express = require("express");
 const app = express();
 const cors = require("cors");
@@ -14,6 +12,7 @@ app.use(
 );
 
 app.options("*", cors());
+console.log("CORS middleware loaded");
 
 const port = 7700;
 
@@ -59,7 +58,6 @@ app.use("/api", authMiddleware, answerRoutes);
 app.use((req, res) => {
   res.status(404).json({ message: "Route not found" });
 });
-
 
 async function start() {
   try {
