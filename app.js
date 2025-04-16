@@ -3,15 +3,17 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-// app.use(cors()); // Enable CORS for all routes
-// Configure CORS properly
-const corsOptions = {
-  origin: "http://localhost:5173", // Your frontend origin
-  credentials: true, // Allow credentials
-  optionsSuccessStatus: 200, // For legacy browser support
-};
 
-app.use(cors(corsOptions));
+// Allow requests from your frontend domain
+app.use(
+  cors({
+    origin: "https://evangadiforum.nebiatzportfolio.com",
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    credentials: true, // if you're using cookies/sessions
+  })
+);
+
+app.options("*", cors());
 
 const port = 7700;
 
