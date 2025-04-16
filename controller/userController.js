@@ -95,6 +95,7 @@ async function login(req, res) {
 }
 //#####################################################################################################
 async function checkUser(req, res) {
+    console.log("✅ checkUser endpoint hit!");
   const username = req.user?.username;
   // console.log(username);
   const userid = req.user?.user_id;

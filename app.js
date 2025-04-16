@@ -7,11 +7,10 @@ app.use(
   cors({
     origin: "https://evangadiforum.nebiatzportfolio.com",
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    credentials: true, // if you're using cookies/sessions
+  
   })
 );
 
-app.options("*", cors());
 console.log("CORS middleware loaded");
 app.use(express.json());
 

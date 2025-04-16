@@ -22,7 +22,7 @@ router.post("/register", register);
 router.post("/login", login);
 
 // check user route
-router.post("/checkUser", middleware, checkUser);
+router.get("/checkUser", middleware, checkUser);
 
 //select user profile route
 router.get("/profile", middleware, getProfile);
